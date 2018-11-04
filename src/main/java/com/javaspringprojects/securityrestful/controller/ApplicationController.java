@@ -10,5 +10,17 @@ public class ApplicationController {
 	public String showHome() {
 		return "home";
 	}
+	
+	//add requestin mapping for /leaders
+	@GetMapping("/leaders")
+	public String showLeaders() {
+		return "leaders";
+	}
+	
+	//add requestin mapping for /systems
+		@GetMapping("/systems")
+		public String showSystems() {
+			return "systems";
+		}
 
 }

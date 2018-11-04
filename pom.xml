@@ -7,11 +7,13 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>patient-management-system</name>
+	<name>spring-security-restful-patient-management-system</name>
 
 	<properties>
-		<springframework.version>5.0.2.RELEASE</springframework.version>
-
+		
+		<springframework.version>5.1.0.RELEASE</springframework.version>
+ 		<springsecurity.version>5.1.0.RELEASE</springsecurity.version>
+ 		
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -24,7 +26,28 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
+		
+		<!-- Spring Security -->
+		<!--spring-security-web  and spring-security-config-->
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-web</artifactId>
+		  <version>${springsecurity.version}</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-config</artifactId>
+		  <version>${springsecurity.version}</version>
+		</dependency>
+		
+		<!-- Add Spring Security Taglibs support -->
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-taglibs</artifactId>
+		  <version>${springsecurity.version}</version>
+		</dependency>
+		
 		<!-- Servlet, JSP and JSTL support -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
