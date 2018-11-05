@@ -1,5 +1,8 @@
 package com.javaspringprojects.securityrestful.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,10 +13,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	//default login
+	
+	//add a reference to our security data source
+	@Autowired
+	private DataSource securityDataSource;
+	
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
+		//use jdbc authentication
+		auth.jdbcAuthentication().dataSource(securityDataSource);
 	}
 	
 	//Custom Login
