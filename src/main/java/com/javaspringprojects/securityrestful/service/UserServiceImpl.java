@@ -15,9 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.javaspringprojects.securityrestful.dao.RoleDao;
 import com.javaspringprojects.securityrestful.dao.UserDao;
+import com.javaspringprojects.securityrestful.entity.Role;
 import com.javaspringprojects.securityrestful.entity.User;
 import com.javaspringprojects.securityrestful.user.CustomRegisterUser;
 
+@Service
 public class UserServiceImpl implements UserService {
 	
 	//need to inject user dao
@@ -31,6 +33,7 @@ public class UserServiceImpl implements UserService {
 	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
+	@Transactional
 	public User findByUserName(String userName) {
 		// check the database if the user already exists
 		return userDao.findByUserName(userName);

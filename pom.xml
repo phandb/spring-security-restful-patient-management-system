@@ -11,8 +11,8 @@
 
 	<properties>
 		
-		<springframework.version>5.1.0.RELEASE</springframework.version>
- 		<springsecurity.version>5.1.0.RELEASE</springsecurity.version>
+		<springframework.version>5.0.5.RELEASE</springframework.version>
+ 		<springsecurity.version>5.0.4.RELEASE</springsecurity.version>
  		<hibernate.version>5.2.16.Final</hibernate.version>
 		<mysql.connector.version>5.1.45</mysql.connector.version>
 		<c3po.version>0.9.5.2</c3po.version>
@@ -89,12 +89,7 @@
 			<version>${c3po.version}</version>
 		</dependency>
 		
-		<!-- Hibernate Validator -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>6.0.7.Final</version>
-		</dependency>
+		
 		
 		<!-- Servlet, JSP and JSTL support -->
 		<dependency>
@@ -122,7 +117,12 @@
 			<scope>test</scope>
 		</dependency>
 		
-		
+		<!-- Hibernate Validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.7.Final</version>
+		</dependency>
 
 	</dependencies>
 
@@ -137,7 +137,7 @@
 					<!-- Add Maven coordinates (GAV) for Maven war plugin -->
 					  <groupId>org.apache.maven.plugins</groupId>
 					  <artifactId>maven-war-plugin</artifactId>
-					  <version>3.2.2</version>
+					  <version>3.2.0</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>

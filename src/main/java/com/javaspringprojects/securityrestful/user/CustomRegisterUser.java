@@ -9,7 +9,7 @@ import com.javaspringprojects.securityrestful.validation.ValidEmail;
 
 
 @FieldMatch.List({
-	@FieldMatch(first = "passwaord", second ="matchingPassword", message="The password fields must match")
+	@FieldMatch(first = "password", second ="matchingPassword", message="The password fields must match")
 })
 public class CustomRegisterUser {
 	
