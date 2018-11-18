@@ -23,5 +23,13 @@ public class EmailValidator implements ConstraintValidator<ValidEmail, String>{
 		matcher = pattern.matcher(email);
 		return matcher.matches();
 	}
-
+	
+/*
+	//Added to fix issue with EmailValidator
+	@Override
+	public void initialize(ValidEmail constraintAnnotation) {
+		// TODO Auto-generated method stub
+		
+	}
+*/
 }

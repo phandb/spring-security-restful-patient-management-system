@@ -14,9 +14,11 @@
 		
 		<!-- Display user name and role -->
 		<p>
-			User:<security.authentication property="principal.username"/>
+			User: <security:authentication property="principal.username" />
 			<br><br>
-			Role(s): <security.authentication property="principal.authorities"/>
+			Role(s): <security:authentication property="principal.authorities" />
+			<br><br>
+			First name: ${user.firstName}, Last name: ${user.lastName}, Email: ${user.email}
 			
 		</p>
 		<security:authorize access="hasRole('MANAGER')">

@@ -1,9 +1,10 @@
 package com.javaspringprojects.securityrestful.service;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.stream.Collectors;
-
+import com.javaspringprojects.securityrestful.dao.RoleDao;
+import com.javaspringprojects.securityrestful.dao.UserDao;
+import com.javaspringprojects.securityrestful.entity.Role;
+import com.javaspringprojects.securityrestful.entity.User;
+import com.javaspringprojects.securityrestful.user.CustomRegisterUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,11 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.javaspringprojects.securityrestful.dao.RoleDao;
-import com.javaspringprojects.securityrestful.dao.UserDao;
-import com.javaspringprojects.securityrestful.entity.Role;
-import com.javaspringprojects.securityrestful.entity.User;
-import com.javaspringprojects.securityrestful.user.CustomRegisterUser;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.stream.Collectors;
+
 
 @Service
 public class UserServiceImpl implements UserService {
