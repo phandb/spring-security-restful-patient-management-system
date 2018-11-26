@@ -36,7 +36,7 @@ public class ApplicationConfig {
 	// set up a logger for diagnostics
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
-	
+	/*  ***No Need viewResolver in REST**
 	// define a bean for ViewResolver
 	@Bean
 	public ViewResolver viewResolver() {
@@ -48,6 +48,7 @@ public class ApplicationConfig {
 		
 		return viewResolver;
 	}
+	*/
 	
 	// define a bean for our security datasource
 	
