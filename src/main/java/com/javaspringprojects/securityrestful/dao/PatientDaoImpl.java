@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.javaspringprojects.securityrestful.entity.Patient;
 
-@Repository
+@Repository("patientDao")
 public class PatientDaoImpl implements PatientDao {
 	
 	//need to inject the session factory
@@ -41,7 +41,7 @@ public class PatientDaoImpl implements PatientDao {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		//now retrieve/read from database using the primary key
-		Patient thePatient = currentSession.get(Patient.class,  theId);
+		Patient thePatient = currentSession.get(Patient.class,  patientId);
 		
 		return thePatient;
 		
@@ -64,14 +64,14 @@ public class PatientDaoImpl implements PatientDao {
 	
 	@Override
 	//@Transactional is managed in Service 
-	public void deletePatient(Patient thePatient) {
+	public void deletePatient(int patientId) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		//delete object with primary key
 		Query<Patient> theQuery = currentSession.createQuery("delete from Patient where id=:patientId", Patient.class);
 		
-		theQuery.setParameter("patientId", theId);
+		theQuery.setParameter("patientId", patientId);
 		
 		theQuery.executeUpdate();		
 	}

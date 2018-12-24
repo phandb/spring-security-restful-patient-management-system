@@ -8,9 +8,13 @@ public interface PatientService {
 
 	
 	public List<Patient> getAllPatients();
-	public Patient getPatientById(Integer patientId);
+	
+	public Patient getPatientById(int patientId);
+	
 	public Patient saveOrUpdatePatient(Patient thePatient);
-	public void deletePatient(Patient thePatient);
+	
+	public void deletePatient(int patientId);
+	
 	public List<Patient> searchPatients(String theSearchName);
 
 

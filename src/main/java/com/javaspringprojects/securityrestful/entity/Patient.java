@@ -1,7 +1,6 @@
 package com.javaspringprojects.securityrestful.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -17,8 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,23 +24,23 @@ import javax.persistence.TemporalType;
 //Map entity class to database table
 @Entity
 @Table(name = "patients")
-
+/*
 @NamedQueries({
 	@NamedQuery(name="Patient.getPatientMedicationInfoById",
 			query="select distinct p from Patient p " +
-					"left join fetch p.medication m " + 
+					" left join fetch p.medication m " + 
 					" where p.id = :id"),
 	@NamedQuery(name="Patient.getPatientPhysicianInfoById",
 			query="select distinct p from Patient p " +
-				   "left join fetch p.physician phy " +
+				   " left join fetch p.physician phy " +
 					" where p.id = :id"),
 	@NamedQuery(name="Patient.getPatientPharmacyInfoById",
 			query="select distinct p from Patient p " +
-					"left join fetch p.pharmacy phar " + 
-					" where p.id = :id"),
+					" left join fetch p.pharmacy phar " + 
+					" where p.id = :id")
 	
 }) 
-
+*/
 public class Patient implements Serializable{
 	
 	
@@ -97,6 +94,26 @@ public class Patient implements Serializable{
 		
 		public void removeMedicationFromPatient(Medication medication) {
 			getMedications().remove(medication);
+		}
+		
+		
+		//Add convenience methods for bi-directional relationship with medications
+		public void add(Medication tempMedication) {
+			if (medications == null) {
+				medications = new HashSet<>();
+				
+			}
+			medications.add(tempMedication);
+			tempMedication.setPatient(this);
+		}
+		//Convenience add medications method for uni-directional relationship
+		public void addMedication(Medication theMedication) {
+			if(medications == null) {
+				medications = new HashSet<>();
+			}
+			
+			medications.add(theMedication);
+			
 		}
 	
 	/*******************************************************************/
@@ -283,24 +300,7 @@ public class Patient implements Serializable{
 	}
 	
 	
-	//Add convenience methods for bi-directional relationship with medications
-	public void add(Medication tempMedication) {
-		if (medications == null) {
-			medications = new ArrayList<>();
-			
-		}
-		medications.add(tempMedication);
-		tempMedication.setPatient(this);
-	}
-	//Convenience add medications method for uni-directional relationship
-	public void addMedication(Medication theMedication) {
-		if(medications == null) {
-			medications = new ArrayList<>();
-		}
-		
-		medications.add(theMedication);
-		
-	}
+	
 	
 
 }
