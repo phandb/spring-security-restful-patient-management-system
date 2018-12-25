@@ -28,9 +28,15 @@
 	<classpathentry kind="lib" path="C:/Users/Dalton/Documents/Udemy/Spring and Hibernate for Beginners/Additional Java Files/jaxb-api-2.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Dalton/Documents/Udemy/Spring and Hibernate for Beginners/Additional Java Files/jaxb-core-2.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Dalton/Documents/Udemy/Spring and Hibernate for Beginners/Additional Java Files/jaxb-impl-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk-11.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0 (2)">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
 		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
