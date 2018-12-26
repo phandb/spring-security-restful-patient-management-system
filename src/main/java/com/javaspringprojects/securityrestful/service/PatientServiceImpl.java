@@ -11,47 +11,45 @@ import com.javaspringprojects.securityrestful.entity.Patient;
 
 @Service
 public class PatientServiceImpl implements PatientService {
+	
 
 	//Need to inject patient Dao
 	@Autowired
 	private PatientDao patientDao;
-	
+
 	@Override
-	@Transactional
-	public List<Patient> getAllPatients(){
+	public List<Patient> getAllPatients() {
 		
 		return patientDao.getAllPatients();
 	}
-	
+
 	@Override
 	@Transactional
 	public Patient getPatientById(int patientId) {
-		
-		return patientDao.getPatientById(patientId);
-		
-	}
 	
+		return patientDao.getPatientById(patientId);
+	}
+
 	@Override
 	@Transactional
 	public Patient saveOrUpdatePatient(Patient thePatient) {
-		
+
 		return patientDao.saveOrUpdatePatient(thePatient);
-		
 	}
-	
+
 	@Override
 	@Transactional
 	public void deletePatient(int patientId) {
 		
 		patientDao.deletePatient(patientId);
+
 	}
-	
+
 	@Override
 	@Transactional
-	public List<Patient> searchPatients(String theSearchName){
+	public List<Patient> searchPatients(String theSearchName) {
 		
 		return patientDao.searchPatients(theSearchName);
 	}
-
 
 }
